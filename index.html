@@ -214,6 +214,1296 @@
 
         const QUESTIONS_DB = {
                     basics: [
+                            {
+        question: "Что такое DOM?",
+        options: [
+            "Document Object Model",
+            "Модель объекта документа",
+            "Представление HTML документа в виде дерева объектов",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "DOM (Document Object Model) - это программный интерфейс для HTML и XML документов, который представляет структуру документа в виде дерева объектов."
+    },
+    {
+        question: "Что такое BOM?",
+        options: [
+            "Browser Object Model",
+            "Модель объекта браузера",
+            "API для работы с браузером",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "BOM (Browser Object Model) - это объектная модель браузера, предоставляющая API для работы с окном браузера, историей, навигацией и др."
+    },
+    {
+        question: "Как получить элемент по ID?",
+        options: [
+            "document.getElementById()",
+            "document.querySelector()",
+            "document.getElementByID()",
+            "Оба первых варианта верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "Можно использовать document.getElementById('id') или document.querySelector('#id') для получения элемента по ID."
+    },
+    {
+        question: "Как получить элементы по классу?",
+        options: [
+            "document.getElementsByClassName()",
+            "document.querySelectorAll()",
+            "document.findByClass()",
+            "Первый и второй варианты верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "Для получения элементов по классу используются document.getElementsByClassName('class') или document.querySelectorAll('.class')."
+    },
+    {
+        question: "Как создать новый элемент?",
+        options: [
+            "document.createElement()",
+            "document.newElement()",
+            "document.addElement()",
+            "document.buildElement()"
+        ],
+        correct: 0,
+        difficulty: 1,
+        explanation: "document.createElement(tagName) создает новый HTML элемент с указанным тегом."
+    },
+    {
+        question: "Как добавить элемент в DOM?",
+        options: [
+            "element.appendChild()",
+            "element.append()",
+            "element.insertBefore()",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Для добавления элементов в DOM используются методы: appendChild(), append(), insertBefore(), insertAdjacentElement() и др."
+    },
+    {
+        question: "Как удалить элемент из DOM?",
+        options: [
+            "element.remove()",
+            "element.parentNode.removeChild()",
+            "element.delete()",
+            "Первый и второй варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "element.remove() или element.parentNode.removeChild(element) удаляют элемент из DOM."
+    },
+    {
+        question: "Как изменить текст элемента?",
+        options: [
+            "element.textContent",
+            "element.innerText",
+            "element.innerHTML",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "textContent для plain text, innerText учитывает стили, innerHTML для HTML содержимого."
+    },
+    {
+        question: "Как изменить атрибут элемента?",
+        options: [
+            "element.setAttribute()",
+            "element.attribute = value",
+            "element.getAttribute()",
+            "Первый и второй варианты верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "element.setAttribute(name, value) или прямое обращение к свойству: element.id = 'newId'."
+    },
+    {
+        question: "Что такое event handling?",
+        options: [
+            "Обработка событий",
+            "Механизм响应 на действия пользователя",
+            "Система обработки событий браузера",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Event handling - это обработка событий (клики, нажатия клавиш, движения мыши и др.) в JavaScript."
+    },
+    {
+        question: "Как добавить обработчик события?",
+        options: [
+            "element.addEventListener()",
+            "element.onclick = function",
+            "HTML атрибут onclick",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "Лучший способ - element.addEventListener(), но также работают onclick свойства и HTML атрибуты."
+    },
+    {
+        question: "Что такое event object?",
+        options: [
+            "Объект с информацией о событии",
+            "Объект, передаваемый в обработчик",
+            "Содержит данные о типе события, элементе и др.",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Event object автоматически передается в обработчик события и содержит всю информацию о произошедшем событии."
+    },
+    {
+        question: "Что такое event propagation?",
+        options: [
+            "Распространение события",
+            "Всплытие и перехват событий",
+            "Механизм передачи события по DOM дереву",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Event propagation включает фазы: capturing (перехват) и bubbling (всплытие), которые определяют порядок обработки события в DOM."
+    },
+    {
+        question: "Как остановить всплытие события?",
+        options: [
+            "event.stopPropagation()",
+            "event.stopImmediatePropagation()",
+            "event.preventDefault()",
+            "Первый и второй варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "stopPropagation() останавливает всплытие, stopImmediatePropagation() также предотвращает вызов других обработчиков."
+    },
+    {
+        question: "Как предотвратить действие по умолчанию?",
+        options: [
+            "event.preventDefault()",
+            "return false",
+            "event.stopDefault()",
+            "Первый и второй варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "event.preventDefault() или return false в некоторых случаях предотвращают действие по умолчанию (например, переход по ссылке)."
+    },
+                            {
+        question: "Что такое HTTP-запросы?",
+        options: [
+            "Запросы к серверу по протоколу HTTP",
+            "Запросы к базе данных",
+            "Внутренние вызовы функций",
+            "Запросы к локальному хранилищу"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "HTTP-запросы - это запросы, отправляемые клиентом (браузером) к серверу по протоколу HTTP для получения или отправки данных."
+    },
+    {
+        question: "Какие основные методы HTTP существуют?",
+        options: [
+            "GET, POST, PUT, DELETE",
+            "READ, WRITE, UPDATE, REMOVE",
+            "FETCH, SEND, MODIFY, ERASE",
+            "REQUEST, RESPONSE, UPDATE, DELETE"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Основные методы HTTP: GET (получение данных), POST (отправка данных), PUT (обновление данных), DELETE (удаление данных)."
+    },
+    {
+        question: "Что такое API?",
+        options: [
+            "Application Programming Interface",
+            "Интерфейс для взаимодействия между программами",
+            "Набор методов для доступа к функциональности",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "API (Application Programming Interface) - это интерфейс программирования приложений, который позволяет программам взаимодействовать друг с другом."
+    },
+    {
+        question: "Что такое REST API?",
+        options: [
+            "Representational State Transfer API",
+            "Архитектурный стиль для веб-сервисов",
+            "API,遵循 определенным принципам",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "REST API - это архитектурный стиль для создания веб-сервисов, который использует HTTP протокол и следует определенным принципам (статусность, единообразие интерфейса и др.)."
+    },
+    {
+        question: "Что такое JSON?",
+        options: [
+            "JavaScript Object Notation",
+            "Формат для передачи данных",
+            "Текстовый формат на основе JavaScript объектов",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 1,
+        explanation: "JSON (JavaScript Object Notation) - легкий текстовый формат для обмена данными, основанный на синтаксисе JavaScript объектов."
+    },
+    {
+        question: "Как отправить HTTP-запрос в JavaScript?",
+        options: [
+            "XMLHttpRequest",
+            "fetch API",
+            "axios библиотека",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Для отправки HTTP-запросов можно использовать нативный XMLHttpRequest, современный fetch API или сторонние библиотеки like axios."
+    },
+    {
+        question: "Что такое XMLHttpRequest?",
+        options: [
+            "Старый API для HTTP-запросов",
+            "Объект для асинхронных запросов",
+            "Основной способ работы с AJAX",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "XMLHttpRequest - это API для совершения HTTP-запросов к серверу, основа технологии AJAX."
+    },
+    {
+        question: "Что такое fetch API?",
+        options: [
+            "Современный API для HTTP-запросов",
+            "API на основе Promises",
+            "Более простой alternative XMLHttpRequest",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "fetch API - современный, основанный на Promises API для совершения HTTP-запросов, более простой и мощный чем XMLHttpRequest."
+    },
+    {
+        question: "Что такое CORS?",
+        options: [
+            "Cross-Origin Resource Sharing",
+            "Механизм для跨域 запросов",
+            "Политика безопасности браузеров",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "CORS (Cross-Origin Resource Sharing) - механизм, который позволяет веб-страницам делать запросы к доменам, отличным от домена текущей страницы."
+    },
+    {
+        question: "Что такое Same-Origin Policy?",
+        options: [
+            "Политика одинакового起源",
+            "Ограничение на跨域 запросы",
+            "Политика безопасности браузеров",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Same-Origin Policy - политика безопасности, которая ограничивает взаимодействие между ресурсами с разных источников (доменов) для защиты пользователей."
+    },
+    {
+        question: "Что такое WebSocket?",
+        options: [
+            "Протокол для двусторонней связи",
+            "Технология для реального времени",
+            "Alternative HTTP для persistent соединений",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "WebSocket - протокол для полно-duplex связи между клиентом и сервером over single TCP соединения, идеален для real-time приложений."
+    },
+    {
+        question: "Что такое Cookie?",
+        options: [
+            "Небольшие данные, хранимые браузером",
+            "Механизм для сохранения состояния",
+            "Данные, отправляемые сервером и хранимые клиентом",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Cookie - небольшие порции данных, которые сервер отправляет браузеру и которые браузер сохраняет и отправляет обратно с последующими запросами."
+    },
+    {
+        question: "Что такое LocalStorage?",
+        options: [
+            "Локальное хранилище в браузере",
+            "Хранилище键-值 пар без срока действия",
+            "API для persistent хранения данных",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "LocalStorage - Web API для хранения данных в браузере без срока действия, данные сохраняются после закрытия браузера."
+    },
+    {
+        question: "Что такое SessionStorage?",
+        options: [
+            "Хранилище данных на время сессии",
+            "Данные, удаляемые после закрытия вкладки",
+            "API для временного хранения",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "SessionStorage - похоже на LocalStorage, но данные сохраняются только на время сессии (до закрытия вкладки/браузера)."
+    },
+    {
+        question: "В чем разница между LocalStorage и SessionStorage?",
+        options: [
+            "Время жизни данных",
+            "Объем хранимых данных",
+            "API доступа",
+            "Все варианты верны"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Основное отличие - время жизни: LocalStorage данные сохраняются permanently, SessionStorage - только на duration сессии."
+    },
+                            {
+        question: "Что такое Promise в JavaScript?",
+        options: [
+            "Обещание выполнения кода",
+            "Объект для работы с асинхронными операциями",
+            "Функция обратного вызова",
+            "Синхронная операция"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Promise - это объект, представляющий результат асинхронной операции, который может быть выполнен успешно или с ошибкой."
+    },
+    {
+        question: "Какие состояния может иметь Promise?",
+        options: [
+            "pending, fulfilled, rejected",
+            "waiting, success, error",
+            "loading, done, failed",
+            "initial, processing, completed"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Promise может находиться в состоянии: pending (ожидание), fulfilled (успешно выполнено), rejected (выполнено с ошибкой)."
+    },
+    {
+        question: "Что такое async/await?",
+        options: [
+            "Синтаксический сахар для Promises",
+            "Новые операторы для циклов",
+            "Методы для работы с временем",
+            "Функции для ожидания"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "async/await - это синтаксический сахар над Promises, позволяющий писать асинхронный код в более читаемом синхронном стиле."
+    },
+    {
+        question: "Как объявить асинхронную функцию?",
+        options: [
+            "async function myFunc() {}",
+            "function async myFunc() {}",
+            "function myFunc() async {}",
+            "await function myFunc() {}"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Асинхронная функция объявляется с ключевым словом async перед function: async function myFunc() {}"
+    },
+    {
+        question: "Что делает оператор await?",
+        options: [
+            "Останавливает выполнение всей программы",
+            "Останавливает выполнение async функции до разрешения Promise",
+            "Создает новое обещание",
+            "Обрабатывает ошибки"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "await приостанавливает выполнение async функции до тех пор, пока Promise не будет разрешен, и возвращает его результат."
+    },
+    {
+        question: "Что такое try/catch?",
+        options: [
+            "Блок для尝试 и перехвата ошибок",
+            "Метод для тестирования кода",
+            "Функция для отладки",
+            "Оператор для循环"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "try/catch - конструкция для обработки ошибок: код в try выполняется, а в catch перехватываются возможные ошибки."
+    },
+    {
+        question: "Для чего используется finally?",
+        options: [
+            "Для окончания функции",
+            "Для выполнения кода после try/catch независимо от результата",
+            "Для финальной обработки данных",
+            "Для завершения программы"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Блок finally выполняется после try/catch независимо от того, была ошибка или нет."
+    },
+    {
+        question: "Что такое throw?",
+        options: [
+            "Оператор для броска исключения",
+            "Функция для генерации ошибок",
+            "Метод для остановки выполнения",
+            "Команда для отмены операции"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Оператор throw позволяет сгенерировать пользовательское исключение (ошибку)."
+    },
+    {
+        question: "Что такое Error object?",
+        options: [
+            "Объект для создания ошибок",
+            "Встроенный объект для работы с ошибками",
+            "Базовый класс для всех ошибок",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Error - встроенный объект и базовый класс для всех ошибок в JavaScript. Можно создавать собственные ошибки через new Error()."
+    },
+    {
+        question: "Какие встроенные типы ошибок есть в JavaScript?",
+        options: [
+            "SyntaxError, ReferenceError, TypeError",
+            "RangeError, URIError, EvalError",
+            "AggregateError, DOMException",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "JavaScript имеет множество встроенных типов ошибок для разных ситуаций: SyntaxError, ReferenceError, TypeError, RangeError, URIError, EvalError, AggregateError, DOMException и др."
+    },
+    {
+        question: "Что такое event loop?",
+        options: [
+            "Цикл событий JavaScript",
+            "Цикл обработки событий браузера",
+            "Механизм для асинхронного выполнения",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Event Loop - это механизм, который позволяет JavaScript обрабатывать асинхронные операции, используя call stack, callback queue и microtask queue."
+    },
+    {
+        question: "Что такое call stack?",
+        options: [
+            "Стек вызовов функций",
+            "Очередь вызовов",
+            "Список функций",
+            "Массив операций"
+        ],
+        correct: 0,
+        difficulty: 3,
+        explanation: "Call Stack - стек вызовов, который отслеживает текущие выполняющиеся функции и их контекст выполнения."
+    },
+    {
+        question: "Что такое callback queue?",
+        options: [
+            "Очередь callback функций",
+            "Очередь для асинхронных операций",
+            "Очередь для макрозадач",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Callback Queue (Task Queue) - очередь для callback'ов асинхронных операций (setTimeout, setInterval, события DOM)."
+    },
+    {
+        question: "Что такое microtask queue?",
+        options: [
+            "Очередь для микрозадач",
+            "Очередь для Promise callback'ов",
+            "Очередь с высшим приоритетом",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Microtask Queue - очередь для микрозадач (Promise callbacks, MutationObserver), которые имеют высший приоритет перед callback queue."
+    },
+    {
+        question: "В каком порядке выполняются очереди?",
+        options: [
+            "Сначала callback queue, потом microtask queue",
+            "Сначала microtask queue, потом callback queue",
+            "Одновременно",
+            "Случайным образом"
+        ],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Сначала выполняются все микрозадачи из microtask queue, затем одна задача из callback queue, затем снова все микрозадачи и т.д."
+    },
+                            {
+        question: "Что такое Strict Mode в JavaScript?",
+        options: [
+            "Режим строгой типизации",
+            "Режим с дополнительными проверками и ограничениями",
+            "Режим для ускорения выполнения кода",
+            "Режим совместимости со старыми браузерами"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Strict Mode ('use strict') включает более строгий вариант JavaScript, который выбрасывает ошибки на небезопасные действия и предотвращает некоторые тихие ошибки."
+    },
+    {
+        question: "Где можно включить Strict Mode?",
+        options: [
+            "Только в начале файла",
+            "Только в начале функции",
+            "В начале файла или функции",
+            "В любом месте кода"
+        ],
+        correct: 2,
+        difficulty: 2,
+        explanation: "Strict Mode можно включить для всего файла (первая строка) или для отдельной функции (первая строка функции)."
+    },
+    {
+        question: "Что такое необъявленная переменная?",
+        options: [
+            "Переменная без значения",
+            "Переменная, объявленная без var/let/const",
+            "Переменная с значением undefined",
+            "Переменная в другой области видимости"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Необъявленная переменная создается присваиванием значения идентификатору без предварительного объявления (var, let, const). В strict mode это вызывает ошибку."
+    },
+    {
+        question: "Что такое глобальная переменная?",
+        options: [
+            "Переменная, доступная everywhere",
+            "Переменная, объявленная вне функций",
+            "Переменная в window объекте",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Глобальная переменная объявлена вне функций, доступна throughout кода и становится свойством глобального объекта (window в браузере)."
+    },
+    {
+        question: "Что такое локальная переменная?",
+        options: [
+            "Переменная внутри функции",
+            "Переменная с ограниченной областью видимости",
+            "Переменная в блоке кода",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Локальная переменная имеет ограниченную область видимости: function scope (var) или block scope (let/const)."
+    },
+    {
+        question: "Что такое область видимости (scope)?",
+        options: [
+            "Место, где переменная доступна",
+            "Размер переменной",
+            "Тип переменной",
+            "Значение переменной"
+        ],
+        correct: 0,
+        difficulty: 1,
+        explanation: "Область видимости определяет, где переменная или функция доступна для использования в коде."
+    },
+    {
+        question: "Какие типы областей видимости есть в JavaScript?",
+        options: [
+            "Глобальная и локальная",
+            "Функциональная и блочная",
+            "Глобальная, функциональная, блочная",
+            "Только глобальная"
+        ],
+        correct: 2,
+        difficulty: 2,
+        explanation: "JavaScript имеет глобальную область видимости, функциональную (для var) и блочную (для let/const)."
+    },
+    {
+        question: "Что такое лексическая область видимости?",
+        options: [
+            "Область видимости, определяемая во время выполнения",
+            "Область видимости, определяемая местом объявления в коде",
+            "Динамическая область видимости",
+            "Глобальная область видимости"
+        ],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Лексическая (статическая) область видимости определяется местом объявления переменной или функции в исходном коде, а не местом вызова."
+    },
+    {
+        question: "Что такое замыкание (closure)?",
+        options: [
+            "Функция внутри другой функции",
+            "Функция с доступом к переменным внешней функции",
+            "Способ скрытия переменных",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Замыкание - это функция, которая имеет доступ к переменным из внешней области видимости, даже после того как внешняя функция завершила выполнение."
+    },
+    {
+        question: "Для чего используются замыкания?",
+        options: [
+            "Создание приватных переменных",
+            "Сохранение состояния",
+            "Создание фабрик функций",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Замыкания используются для создания приватных переменных, сохранения состояния между вызовами и создания фабрик функций."
+    },
+    {
+        question: "Что такое IIFE?",
+        options: [
+            "Immediately Invoked Function Expression",
+            "Inline Function Expression",
+            "Internal Function Execution",
+            "Immediate Function Evaluation"
+        ],
+        correct: 0,
+        difficulty: 3,
+        explanation: "IIFE - функция, которая выполняется сразу после своего определения: (function(){})() или (()=>{})()"
+    },
+    {
+        question: "Зачем использовать IIFE?",
+        options: [
+            "Для создания изолированной области видимости",
+            "Для избежания загрязнения глобального пространства",
+            "Для инкапсуляции кода",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "IIFE создает изолированную область видимости, предотвращает загрязнение глобального пространства и позволяет инкапсулировать код."
+    },
+    {
+        question: "Что такое callback функция?",
+        options: [
+            "Функция, которая вызывается при ошибке",
+            "Функция, передаваемая как аргумент и вызываемая позже",
+            "Функция для обратного вызова",
+            "Функция с возвратом значения"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Callback функция передается как аргумент в другую функцию и вызывается внутри неё после завершения какой-либо операции."
+    },
+    {
+        question: "Что такое callback hell?",
+        options: [
+            "Много callback функций",
+            "Сильно вложенные callback функции",
+            "Библиотека для работы с callback",
+            "Оптимизация callback"
+        ],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Callback hell (ад callback'ов) - ситуация с глубокой вложенностью callback функций, что делает код сложным для чтения и поддержки."
+    },
+    {
+        question: "Как избежать callback hell?",
+        options: [
+            "Использовать Promises",
+            "Использовать async/await",
+            "Использовать именованные функции",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Для избежания callback hell можно использовать Promises, async/await, модулировать код на именованные функции или использовать библиотеки типа async.js."
+    },
+                            {
+        question: "Что такое полифиллы (polyfills)?",
+        options: [
+            "Специальные функции для работы с DOM",
+            "Код, который добавляет недостающую функциональность в старых браузерах",
+            "Методы для заполнения массивов",
+            "Библиотеки для анимации"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Полифиллы - это код, который реализует новую функциональность в старых браузерах, которые её не поддерживают нативно."
+    },
+    {
+        question: "Что такое транспиляция кода?",
+        options: [
+            "Сжатие кода",
+            "Преобразование кода из одного языка в другой",
+            "Оптимизация производительности",
+            "Преобразование кода в более новую версию JavaScript"
+        ],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Транспиляция - это преобразование кода из одного языка программирования в другой или между разными версиями одного языка (например, из ES6 в ES5)."
+    },
+    {
+        question: "Для чего используется Babel?",
+        options: [
+            "Для минификации кода",
+            "Для транспиляции современного JS в совместимый с старыми браузерами",
+            "Для статического анализа кода",
+            "Для форматирования кода"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Babel - это транспилятор, который преобразует современный JavaScript код в версию, совместимую со старыми браузерами."
+    },
+    {
+        question: "Что такое package.json?",
+        options: [
+            "Файл с настройками браузера",
+            "Файл с метаданными и зависимостями проекта",
+            "Файл с JavaScript кодом",
+            "Файл с HTML разметкой"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "package.json - это файл метаданных для Node.js проектов, который содержит информацию о проекте, его зависимостях и скриптах."
+    },
+    {
+        question: "Что такое npm?",
+        options: [
+            "Node Package Manager",
+            "New Project Manager",
+            "Network Protocol Module",
+            "Native Performance Monitor"
+        ],
+        correct: 0,
+        difficulty: 1,
+        explanation: "npm (Node Package Manager) - менеджер пакетов для JavaScript, используемый для установки и управления зависимостями проектов."
+    },
+    {
+        question: "Что такое модули в JavaScript?",
+        options: [
+            "Встроенные функции языка",
+            "Система для организации кода в отдельные файлы",
+            "Библиотеки для работы с DOM",
+            "Типы данных"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Модули позволяют разбивать код на отдельные файлы с возможностью импорта и экспорта функциональности между ними."
+    },
+    {
+        question: "Какой ключевое слово используется для экспорта?",
+        options: [
+            "export",
+            "import",
+            "module",
+            "require"
+        ],
+        correct: 0,
+        difficulty: 1,
+        explanation: "Ключевое слово export используется для экспорта переменных, функций или классов из модуля."
+    },
+    {
+        question: "Какой ключевое слово используется для импорта?",
+        options: [
+            "export",
+            "import",
+            "module",
+            "require"
+        ],
+        correct: 1,
+        difficulty: 1,
+        explanation: "Ключевое слово import используется для импорта функциональности из других модулей."
+    },
+    {
+        question: "Что такое CORS?",
+        options: [
+            "Cross-Origin Resource Sharing",
+            "Cross-Origin Request Security",
+            "Cross-Origin Response System",
+            "Cross-Origin Routing Service"
+        ],
+        correct: 0,
+        difficulty: 3,
+        explanation: "CORS (Cross-Origin Resource Sharing) - механизм, который позволяет веб-страницам получать данные с другого домена."
+    },
+    {
+        question: "Что такое Same-Origin Policy?",
+        options: [
+            "Политика одинаковых оригиналов",
+            "Правило безопасности браузеров",
+            "Метод кэширования",
+            "Протокол передачи данных"
+        ],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Same-Origin Policy - политика безопасности, которая ограничивает взаимодействие между ресурсами с разных источников (доменов)."
+    },
+    {
+        question: "Что такое AJAX?",
+        options: [
+            "Asynchronous JavaScript and XML",
+            "Advanced JavaScript Application",
+            "Automated JSON and XML",
+            "Application JavaScript Extension"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "AJAX - технология, позволяющая отправлять и получать данные с сервера без перезагрузки страницы."
+    },
+    {
+        question: "Что такое JSON?",
+        options: [
+            "JavaScript Object Notation",
+            "JavaScript Online Network",
+            "Java Script Object Naming",
+            "JavaScript Organized Nodes"
+        ],
+        correct: 0,
+        difficulty: 1,
+        explanation: "JSON - текстовый формат для представления данных в виде пар ключ-значение, основанный на синтаксисе JavaScript объектов."
+    },
+    {
+        question: "Как преобразовать объект в JSON строку?",
+        options: [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "object.toJSON()",
+            "JSON.encode()"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "JSON.stringify() преобразует JavaScript объект или значение в JSON строку."
+    },
+    {
+        question: "Как преобразовать JSON строку в объект?",
+        options: [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "object.fromJSON()",
+            "JSON.decode()"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "JSON.parse() преобразует JSON строку в JavaScript объект или значение."
+    },
+    {
+        question: "Что такое Web API?",
+        options: [
+            "Встроенные функции браузера",
+            "Интерфейсы для взаимодействия с браузером",
+            "Серверные API",
+            "Библиотеки для работы с сетью"
+        ],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Web API - это интерфейсы, предоставляемые браузером для взаимодействия с различными функциями (DOM, XMLHttpRequest, Geolocation и др.)."
+    },
+                            {
+        question: "Какой оператор используется для проверки принадлежности объекта к классу?",
+        options: ["typeof", "instanceof", "isType", "classOf"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Оператор instanceof проверяет, принадлежит ли объект к определенному классу или конструктору."
+    },
+    {
+        question: "Что такое NaN в JavaScript?",
+        options: ["Not a Number", "Null and None", "Number Alert", "No Assignment"],
+        correct: 0,
+        difficulty: 2,
+        explanation: "NaN (Not a Number) - специальное значение, которое возвращается при невозможности выполнить математическую операцию."
+    },
+    {
+        question: "Как проверить, является ли значение NaN?",
+        options: ["value === NaN", "value == NaN", "isNaN(value)", "Number.isNaN(value)"],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Number.isNaN() точно проверяет, является ли значение NaN, в отличие от глобальной isNaN(), которая сначала преобразует значение в число."
+    },
+    {
+        question: "Что такое undefined?",
+        options: ["Отсутствие значения", "Пустая строка", "Нулевое значение", "Ошибка"],
+        correct: 0,
+        difficulty: 1,
+        explanation: "undefined означает, что переменная объявлена, но не инициализирована значением."
+    },
+    {
+        question: "Что такое null?",
+        options: ["Пустой объект", "Преднамеренное отсутствие значения", "Неопределенность", "Ошибка"],
+        correct: 1,
+        difficulty: 1,
+        explanation: "null - это intentional absence of any object value (преднамеренное отсутствие значения объекта)."
+    },
+    {
+        question: "В чем разница между == и ===?",
+        options: ["Нет разницы", "== сравнивает значения, === сравнивает значения и типы", "=== быстрее", "== безопаснее"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "== выполняет преобразование типов перед сравнением, === сравнивает без преобразования типов (строгое равенство)."
+    },
+    {
+        question: "Что такое псевдомассив arguments?",
+        options: ["Массив аргументов", "Объект, похожий на массив", "Функция для работы с аргументами", "Специальный тип данных"],
+        correct: 1,
+        difficulty: 3,
+        explanation: "arguments - это array-like объект, доступный внутри функций, содержащий переданные аргументы."
+    },
+    {
+        question: "Что такое Rest parameters (...args)?",
+        options: ["Остановка функции", "Сбор аргументов в массив", "Пропуск аргументов", "Остаточные значения"],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Rest parameters (...args) собирают все оставшиеся аргументы в массив."
+    },
+    {
+        question: "Что такое Spread operator?",
+        options: ["Расширение объекта", "Разделение массива", "Распространение элементов", "Копирование значений"],
+        correct: 2,
+        difficulty: 2,
+        explanation: "Spread operator (...) позволяет раскладывать элементы массива или объекта."
+    },
+    {
+        question: "Что такое Template Literals?",
+        options: ["Шаблоны строк", "Текстовые шаблоны", "Строки с подстановками", "Все варианты верны"],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Template Literals (обратные кавычки) позволяют создавать строки с подстановками переменных ${} и многострочные строки."
+    },
+    {
+        question: "Что такое Destructuring?",
+        options: ["Разрушение объекта", "Извлечение значений", "Декомпозиция", "Все варианты верны"],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Destructuring позволяет извлекать значения из массивов и объектов в переменные."
+    },
+    {
+        question: "Что такое IIFE?",
+        options: ["Immediately Invoked Function Expression", "Inline Function", "Internal Function", "Immediate Function"],
+        correct: 0,
+        difficulty: 3,
+        explanation: "IIFE - функция, которая выполняется сразу после своего определения: (function(){})()"
+    },
+    {
+        question: "Что такое Arrow Function?",
+        options: ["Стрелочная функция", "Быстрая функция", "Анонимная функция", "Сокращенная функция"],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Arrow Function (=>) - краткий синтаксис для функций с особым поведением this."
+    },
+    {
+        question: "Как работает this в Arrow Function?",
+        options: ["Как в обычных функциях", "Всегда undefined", "Захватывает this из внешней области", "Всегда global"],
+        correct: 2,
+        difficulty: 3,
+        explanation: "Arrow functions не имеют своего this, они захватывают this из окружающего контекста."
+    },
+    {
+        question: "Что такое Closure?",
+        options: ["Закрытие функции", "Функция с доступом к внешним переменным", "Приватность", "Блокировка"],
+        correct: 1,
+        difficulty: 3,
+        explanation: "Closure - функция, которая запоминает свое лексическое окружение даже после выполнения внешней функции."
+    },
+                        {
+        question: "Что такое JavaScript?",
+        options: ["Язык программирования", "База данных", "Операционная система", "Текстовый редактор"],
+        correct: 0,
+        difficulty: 1,
+        explanation: "JavaScript - это высокоуровневый, интерпретируемый язык программирования, который поддерживает различные парадигмы программирования."
+    },
+    {
+        question: "Какой символ используется для однострочных комментариев?",
+        options: ["/*", "//", "#", "<!--"],
+        correct: 1,
+        difficulty: 1,
+        explanation: "// используется для однострочных комментариев в JavaScript. Многострочные комментарии обрамляются /* */."
+    },
+    {
+        question: "Где можно размещать JavaScript код в HTML?",
+        options: ["Только в <head>", "Только в <body>", "Только в отдельных файлах", "В любом месте с тегом <script>"],
+        correct: 3,
+        difficulty: 1,
+        explanation: "JavaScript можно размещать в любом месте HTML документа внутри тега <script>, а также подключать из внешних файлов."
+    },
+    {
+        question: "JavaScript является языком с какой типизацией?",
+        options: ["Статической", "Динамической", "Строгой", "Без типов"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "JavaScript - язык с динамической типизацией, где типы определяются во время выполнения программы."
+    },
+    {
+        question: "Какой оператор проверяет тип значения?",
+        options: ["typeof", "instanceof", "type", "checktype"],
+        correct: 0,
+        difficulty: 1,
+        explanation: "Оператор typeof возвращает строку, указывающую тип операнда."
+    },
+    {
+        question: "Где выполняется JavaScript код?",
+        options: ["Только в браузере", "Только на сервере", "В браузере и на сервере", "Только в Node.js"],
+        correct: 2,
+        difficulty: 1,
+        explanation: "JavaScript может выполняться как в браузере (клиентская сторона), так и на сервере (с помощью Node.js)."
+    },
+    {
+        question: "Какой тег используется для подключения JavaScript?",
+        options: ["<javascript>", "<js>", "<script>", "<code>"],
+        correct: 2,
+        difficulty: 1,
+        explanation: "Тег <script> используется для встраивания или подключения JavaScript кода в HTML документ."
+    },
+    {
+        question: "Что такое ECMAScript?",
+        options: ["Старое название JavaScript", "Стандарт для JavaScript", "Новый язык", "Браузерный движок"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "ECMAScript - это стандарт, на котором основан JavaScript. JavaScript является реализацией этого стандарта."
+    },
+    {
+        question: "В какой версии ES появились стрелочные функции?",
+        options: ["ES5", "ES6", "ES7", "ES8"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Стрелочные функции были добавлены в стандарт ES6 (ECMAScript 2015)."
+    },
+    {
+        question: "JavaScript чувствителен к регистру?",
+        options: ["Да", "Нет", "Только для переменных", "Только для функций"],
+        correct: 0,
+        difficulty: 1,
+        explanation: "JavaScript полностью чувствителен к регистру: переменные myVar и myvar считаются разными."
+    },
+    {
+        question: "Что выведет console.log(typeof null)?",
+        options: ["'null'", "'object'", "'undefined'", "Ошибку"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Это известная особенность JavaScript: typeof null возвращает 'object' (историческая причина)."
+    },
+    {
+        question: "Что такое строгий режим?",
+        options: ["Режим для ускорения кода", "Режим с более строгими правилами", "Режим для совместимости", "Режим для отладки"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "'use strict' включает строгий режим, который предотвращает некоторые ошибки и делает код более безопасным."
+    },
+    {
+        question: "Как объявить переменную с блочной областью видимости?",
+        options: ["var", "let", "const", "variable"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "let и const имеют блочную область видимости, в отличие от var (функциональная область видимости)."
+    },
+    {
+        question: "Что такое Hoisting?",
+        options: ["Поднятие переменных", "Оптимизация кода", "Сборка мусора", "Сжатие кода"],
+        correct: 0,
+        difficulty: 2,
+        explanation: "Hoisting - механизм, при котором объявления переменных и функций «поднимаются» вверх своей области видимости."
+    },
+    {
+        question: "Что выведет console.log(0.1 + 0.2 === 0.3)?",
+        options: ["true", "false", "undefined", "NaN"],
+        correct: 1,
+        difficulty: 2,
+        explanation: "Из-за особенностей представления чисел с плавающей точкой, 0.1 + 0.2 не равно точно 0.3."
+    },
+                            {
+        question: "Что такое 'use strict' в JavaScript?",
+        options: [
+            "Директива для включения строгого режима",
+            "Указание использовать строгий синтаксис",
+            "Способ улучшить производительность",
+            "Метод для отладки кода"
+        ],
+        correct: 0,
+        difficulty: 2,
+        explanation: "'use strict' - это директива, которая включает строгий режим выполнения JavaScript, делая код более безопасным и выбрасывая ошибки на небезопасные операции."
+    },
+    {
+        question: "В чем преимущества строгого режима?",
+        options: [
+            "Предотвращает случайное создание глобальных переменных",
+            "Запрещает дублирование параметров функций",
+            "Делает некоторые ошибки фатальными",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Строгий режим предотвращает многие тихие ошибки, делает их явными, улучшает безопасность и оптимизацию кода."
+    },
+    {
+        question: "Что такое полифиллы (polyfills)?",
+        options: [
+            "Код, добавляющий новую функциональность в старые браузеры",
+            "Библиотеки для анимации",
+            "Инструменты для тестирования",
+            "Плагины для браузеров"
+        ],
+        correct: 0,
+        difficulty: 3,
+        explanation: "Полифиллы - это код, который реализует новую функциональность JavaScript в старых браузерах, которые не поддерживают её нативно."
+    },
+    {
+        question: "Что такое транспиляция кода?",
+        options: [
+            "Преобразование кода между версиями JavaScript",
+            "Сжатие JavaScript кода",
+            "Шифрование исходного кода",
+            "Оптимизация производительности"
+        ],
+        correct: 0,
+        difficulty: 3,
+        explanation: "Транспиляция - это процесс преобразования кода из одной версии JavaScript в другую, обычно из ES6+ в ES5 для совместимости со старыми браузерами."
+    },
+    {
+        question: "Для чего используется Babel?",
+        options: [
+            "Для транспиляции современного JS кода",
+            "Для минификации кода",
+            "Для статического анализа",
+            "Для форматирования кода"
+        ],
+        correct: 0,
+        difficulty: 3,
+        explanation: "Babel - это популярный транспилятор, который преобразует код на современном JavaScript в версию, совместимую со старыми браузерами."
+    },
+    {
+        question: "Что такое npm?",
+        options: [
+            "Node Package Manager",
+            "Менеджер пакетов для JavaScript",
+            "Реестр библиотек и инструментов",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "npm - это менеджер пакетов для JavaScript, который позволяет устанавливать, управлять и публиковать библиотеки и инструменты."
+    },
+    {
+        question: "Что такое package.json?",
+        options: [
+            "Файл конфигурации проекта",
+            "Файл с зависимостями проекта",
+            "Файл с метаданными проекта",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "package.json содержит метаданные проекта, его зависимости, скрипты и другую важную информацию для npm."
+    },
+    {
+        question: "Что такое модули в JavaScript?",
+        options: [
+            "Система для организации кода в файлы",
+            "Механизм импорта/экспорта функциональности",
+            "Способ изоляции кода",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Модули позволяют разбивать код на отдельные файлы с возможностью импорта и экспорта функциональности между ними."
+    },
+    {
+        question: "Какие ключевые слова используются для работы с модулями?",
+        options: [
+            "import и export",
+            "require и module.exports",
+            "include и export",
+            "Первый и второй варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "ES6 модули используют import/export, а CommonJS (Node.js) использует require/module.exports."
+    },
+    {
+        question: "Что такое tree shaking?",
+        options: [
+            "Удаление неиспользуемого кода при сборке",
+            "Оптимизация размера бандла",
+            "Исключение мертвого кода",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Tree shaking - это процесс удаления неиспользуемого кода (мертвого кода) из финального бандла во время сборки проекта."
+    },
+    {
+        question: "Что такое Webpack?",
+        options: [
+            "Сборщик модулей",
+            "Инструмент для сборки JavaScript приложений",
+            "Система для управления зависимостями",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Webpack - это сборщик модулей, который обрабатывает JavaScript, CSS, изображения и другие ресурсы, создавая оптимизированные бандлы."
+    },
+    {
+        question: "Что такое горячая перезагрузка (Hot Module Replacement)?",
+        options: [
+            "Обновление модулей без перезагрузки страницы",
+            "Технология для разработки с live reload",
+            "Механизм замены модулей во время выполнения",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "HMR позволяет обновлять отдельные модули приложения без полной перезагрузки страницы, что ускоряет процесс разработки."
+    },
+    {
+        question: "Что такое ESLint?",
+        options: [
+            "Инструмент для статического анализа кода",
+            "Линтер для JavaScript",
+            "Инструмент для проверки стиля кода",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "ESLint - это инструмент для статического анализа кода, который помогает находить и исправлять ошибки, а также поддерживать единый стиль кода."
+    },
+    {
+        question: "Что такое Prettier?",
+        options: [
+            "Инструмент для форматирования кода",
+            "Code formatter",
+            "Инструмент для автоматического форматирования",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 2,
+        explanation: "Prettier - это инструмент для автоматического форматирования кода, который обеспечивает единый стиль кода в проекте."
+    },
+    {
+        question: "Что такое Jest?",
+        options: [
+            "Фреймворк для тестирования JavaScript",
+            "Инструмент для unit-тестирования",
+            "Библиотека для тестов",
+            "Все варианты верны"
+        ],
+        correct: 3,
+        difficulty: 3,
+        explanation: "Jest - это фреймворк для тестирования JavaScript кода, предоставляющий средства для unit-тестирования, mock-объектов и покрытия кода."
+    },
                         {
                             question: "Что выведет этот код: console.log(typeof null);?",
                             options: ["'null'", "'object'", "'undefined'", "Ошибку"],
